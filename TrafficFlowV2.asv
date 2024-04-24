@@ -1,0 +1,33 @@
+Street = zeros(1,StreetLength)-1;
+for i = 1:10:100
+    Street(i) = 1;
+end
+speedlimit = 5;
+simLength = 1000;
+iterations = zeros(simLength, StreetLength);
+for i = 1:100
+    for j = length(Street): -1 : 1
+        if Street(j) ~= -1
+            [newPosition, newSpeed] = PositionUpdate(Street,j,TrafficLightLocation,TrafficLightred);
+            Street(j) = -1;
+            Street(newPosition) = newSpeed;
+        end
+    end
+    iterations(i,:) = Street(1:StreetLength);
+    %lightswitch = randi(2,2,1);
+    %if(lightswitch(1,1) == 1)
+    %    TrafficLightRed(1) = true;
+    %end
+    %if(lightswitch(2,1) == 1)
+     %   TrafficLightRed(2) = true;
+    %end
+    if i == 50
+        TrafficLightred(1) = fal
+    end
+end
+x = linspace(1,100,100);
+for i = 1: simLength
+    imshow(iterations(i,:),'InitialMagnification',800,Colormap=winter)
+    title(max(iterations(i,:)))
+    pause(0.2)
+end
