@@ -9,11 +9,14 @@ for i = 1:simLength
             Street(newPosition) = newSpeed;
         end
     end
+    TLightCounter = TLightCounter + 1;
     iterations(i,:) = Street(1:end);
-    if mod(i,trafficlightrate) == 0
+    TrafficLightChange = randi(5);
+    if TrafficLightChange == 3 && TrafficLightred == false
         TrafficLightred = true;
+        TLightCounter = 0;
     end
-    if mod(i,2*trafficlightrate) == 0
+    if TLightCounter == RedLightTime
         TrafficLightred = false;
     end
 end

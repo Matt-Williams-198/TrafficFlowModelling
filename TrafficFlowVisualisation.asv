@@ -1,0 +1,9 @@
+function TrafficFlowVisualisation(iterations)
+    graphedArray = zeros('like',iterations);
+    for i = 1:length(iterations(:,1))
+        for  j = 1:length(iterations(1,:))
+            if iterations(i,j)
+                graphedArray(i,j)  = graphedArray(i,j)
+            end
+        end
+    end
