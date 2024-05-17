@@ -4,7 +4,7 @@ end
 for i = 1:simLength
     for j = length(Street): -1 : 1
         if Street(j) ~= -1
-            [newPosition, newSpeed] = PositionUpdate(Street,j,Street(j),1,5,TrafficLightLocation,TrafficLightred);
+            [newPosition, newSpeed] = PositionUpdate(Street,j,Street(j),1,speedlimit,TrafficLightLocation,TrafficLightred);
             Street(j) = -1;
             Street(newPosition) = newSpeed;
         end

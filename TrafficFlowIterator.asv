@@ -1,0 +1,24 @@
+ConstantsandArrays;
+MeanSpeeds = zeros(40,1);
+count = 1;
+for i = 1:40
+    %RedLightTime = count;
+    trafficlightrate = count;
+    speedlimit = count;
+    TrafficFlowV3;
+    MeanCurrentSpeed = MeanSimSpeed(iterations);
+    MeanSpeeds(count) = MeanCurrentSpeed;
+    ConstantsandArrays;
+    count = count + 1;
+end
+%figure
+SpeedLimits = linspace(1,40,10);
+x = linspace(1,40,40);
+x = SpeedLimits/(x * 100);
+%MeanSpeeds = MeanSpeeds .* RedLightTime.' ./ 100;
+%MeanSpeeds = MeanSpeeds ./ SpeedLimits.';
+%plot(x, MeanSpeeds)
+%title('Mean Speed of Traffic against $\Gamma$','Interpreter','Latex')
+%xlabel('$\Gamma$','Interpreter','Latex')
+%ylabel('$\bar{V}$/($V_{lim}$)','Interpreter','Latex')
+ 
